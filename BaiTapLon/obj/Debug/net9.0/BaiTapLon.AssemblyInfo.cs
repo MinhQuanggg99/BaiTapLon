@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("BaiTapLon")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56b3c97b1aede911d2748d0f5afb097d3730d24c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+480a0fc42b3aae9c47bc317d9a6a1ffc3667b054")]
 [assembly: System.Reflection.AssemblyProductAttribute("BaiTapLon")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BaiTapLon")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
