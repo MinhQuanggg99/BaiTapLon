@@ -8,10 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using BaiTapLon.Data;
 using BaiTapLon.Models;
 using BaiTapLon.Areas.Admin.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BaiTapLon.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+
     public class BooksController : Controller
     {
         private readonly BTLContext _context;
