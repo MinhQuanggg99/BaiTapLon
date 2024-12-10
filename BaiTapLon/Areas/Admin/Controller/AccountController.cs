@@ -7,10 +7,12 @@ using Microsoft.EntityFrameworkCore;
 using BaiTapLon.Areas.Admin.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using BaiTapLon.Models;
+using Microsoft.AspNetCore.Authorization;
 
-namespace BaiTapLon.Controllers
+namespace BaiTapLon.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class AccountController : Controller
     {
         private readonly RoleManager<AppRole> _roleManager;
