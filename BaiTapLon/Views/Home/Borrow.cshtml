@@ -1,0 +1,43 @@
+@model BaiTapLon.Models.Books
+
+@{
+    ViewData["Title"] = "Mượn sách";
+}
+
+<section id="borrow-book" class="py-5">
+    <div class="container">
+       
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex justify-content-center">
+                <img src="@Url.Content(Model.Image )" 
+                     class=" rounded shadow" 
+                     alt="@Model.BookName" 
+                     style="width: auto; height: 30em;margin-right: 4em;">
+            </div>
+        <div class="col-md-5 mt-5">
+            <h2 class="text-center mb-4">Mượn sách</h2>
+                <form method="post" asp-action="BorrowBook" asp-controller="BookAction">
+                    <input type="hidden" name="BookId" value="@Model.BookId">
+                    <div class="mb-3">
+                        <label for="FullName" class="form-label">Họ và tên người mượn</label>
+                        <input type="text" class="form-control" id="FullName" name="FullName" 
+                               placeholder="Nhập họ tên" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="BookTitle" class="form-label">Tên sách</label>
+                        <input type="text" class="form-control" id="BookTitle" name="BookTitle" 
+                               value="@Model.BookName" readonly />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ReturnDateExpected" class="form-label">Ngày trả dự kiến</label>
+                        <input type="date" class="form-control" id="ReturnDate" name="ReturnDateExpected" required />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Mượn sách</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

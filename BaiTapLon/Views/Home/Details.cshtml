@@ -1,0 +1,37 @@
+@model BaiTapLon.Models.Books
+
+@if (Model != null)
+{
+    ViewData["Title"] = Model.BookName;
+
+    <section id="book-detail" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="@Url.Content(Model.Image ?? "~/images/default.png")" class="img-fluid rounded shadow"
+                        alt="@Model.BookName" style="width: 100%; height: auto; object-fit:cover;">
+
+                </div>
+                <div class="col-md-6 mt-5">
+                    <h3 class="mb-3">@Model.BookName</h3>
+                    <p><strong>Mô tả:</strong> @Model.Description</p>
+                    <p><strong>Tác giả:</strong> @Model.Author</p>
+                    <p><strong>Số lượng:</strong> @Model.Quantity</p>
+                    <p><strong>Ngày xuất bản:</strong> @Model.Publisher</p>
+                    <p><strong>Loại sách:</strong> @Model.BookType?.BookTypeName</p>
+
+                    <div class="mt-4">
+                        <a class="btn btn-outline-primary btn-lg me-2" asp-action="Product">Quay lại danh
+                            sách sách</a>
+                        <a href="@Url.Action("Borrow", "Home", new { id = Model.BookId })"
+                            class="btn btn-success btn-lg">Mượn sách</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+else
+{
+    <p class="text-center text-danger">Cuốn sách không tồn tại.</p>
+}
