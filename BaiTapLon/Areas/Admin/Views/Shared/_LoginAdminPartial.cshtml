@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item dropdown">
+            <a class="nav-link text-dark dropdown-toggle" id="userDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-person"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <li>
+                    <form class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout"
+                        asp-route-returnUrl="@Url.Action("Index", "Books", new { area = "Admin" })">
+                        <button type="submit" class="btn  text-dark p-0 m-0 border-0">Đăng xuất</button>
+                    </form>
+                </li>
+                <hr class="border-black" />
+                <a asp-action="Index" asp-area="" asp-controller="Home" class="btn text-dark p-0 m-0 border-0" style="margin-left: 10px;">
+                    <li> 
+                            <div class="dropdown-item">
+                                <p>Tới người dùng</p>
+                        </div>
+                    </li>
+                </a>   
+            </ul>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">
+                <i class="bi bi-person"></i>
+            </a>
+        </li>
+    }
+</ul>

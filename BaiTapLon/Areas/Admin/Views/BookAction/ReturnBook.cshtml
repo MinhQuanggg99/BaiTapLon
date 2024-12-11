@@ -1,0 +1,31 @@
+@model IEnumerable<BaiTapLon.Models.BookAction>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="text-center">Người mượn</th>
+            <th class="text-center">Sách mượn</th>
+            <th class="text-center">Hình ảnh</th>
+            <th class="text-center">Trạng thái</th>
+            <th class="text-center">Ngày mượn</th>
+            <th class="text-center">Ngày trả </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.FullName)</td>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.Book.BookName)</td>
+                <td class="text-center">
+                    <img src="@Url.Content($"{item.Book.Image}")" style="width: 3em; height: 3em;">
+                </td>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.ActionStatus)</td>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.BorrowDate)</td>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.ReturnDate)</td>
+
+            </tr>
+        }
+    </tbody>
+</table>

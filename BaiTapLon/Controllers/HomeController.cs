@@ -1,31 +1,62 @@
 using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+using BaiTapLon.Data;
 using BaiTapLon.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
-namespace BaiTapLon.Controllers;
-
-public class HomeController : Controller
+namespace BaiTapLon.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public class HomeController : Controller
     {
-        _logger = logger;
-    }
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        private readonly BTLContext _context;
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+        public HomeController(BTLContext context)
+        {
+            _context = context;
+        }
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        public async Task<IActionResult> Product(int? id)
+        {
+            if (id.HasValue)
+            {
+                var model = await _context.Books.Where(e => e.BookTypeId == id).ToListAsync();
+                return View(model);
+            }
+
+            var allBooks = await _context.Books.ToListAsync();
+            return View(allBooks);
+        }
+        public IActionResult About()
+        {
+            return View();
+        }
+        public async Task<IActionResult> Details(int? id)
+        {
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var model = await _context.Books.Where(e => e.BookId == id).Include(e => e.BookType).FirstOrDefaultAsync();
+            return View(model);
+        }
+        [Authorize]
+        public async Task<IActionResult> Borrow(int? id)
+        {
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var model = await _context.Books.Where(e => e.BookId == id).Include(e => e.BookType).FirstOrDefaultAsync();
+            return View(model);
+        }
+
     }
 }

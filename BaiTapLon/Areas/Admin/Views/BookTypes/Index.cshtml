@@ -1,0 +1,33 @@
+@model IEnumerable<BaiTapLon.Models.BookType>
+
+
+<p>
+    <a class="btn btn-lg btn-primary" asp-action="Create">Tạo mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookTypeName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookTypeName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BookTypeId"><i
+                            class="bi bi-pencil-square text-success fs-4"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.BookTypeId"><i class="bi bi-eye text-primary fs-4"></i></a>
+
+                    <a asp-action="Delete" asp-route-id="@item.BookTypeId"><i class="bi bi-trash text-danger fs-4"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
