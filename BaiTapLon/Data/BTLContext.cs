@@ -24,6 +24,8 @@ namespace BaiTapLon.Data
                     .OnDelete(DeleteBehavior.Restrict);
         }
         public DbSet<BookType> BookType { get; set; } = default!;
+        public DbSet<BookAction> BookAction { get; set; } = default!;
+
 
     }
 }

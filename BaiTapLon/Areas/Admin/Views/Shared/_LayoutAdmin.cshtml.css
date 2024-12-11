@@ -48,24 +48,24 @@ button.accept-policy {
   line-height: 60px;
 } */
 .sidebar {
-    /* background: linear-gradient(to bottom, #2c3e50, #4b79a1); */
-    background-color: aquamarine;
-    min-height: 100vh;
-    color: white;
-  }
-  .sidebar a {
-    color: white;
-    text-decoration: none;
-  }
-  .sidebar a:hover {
-    text-decoration: underline;
-  }
-  .active {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    
-  }
-  hr.border-light {
-    border-color: #fff; /* Màu trắng */
-    border-width: 1px; /* Độ dày */
-  }
+  /* background: linear-gradient(to bottom, #2c3e50, #4b79a1); */
+  background-color: aquamarine;
+  min-height: 100vh;
+  color: white;
+}
+.sidebar a {
+  color: white;
+  text-decoration: none;
+}
+.sidebar a:hover {
+  text-decoration: underline;
+}
+.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  
+}
+hr.border-light {
+  border-color: #fff; /* Màu trắng */
+  border-width: 1px; /* Độ dày */
+}

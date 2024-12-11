@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\KienBTL\\BTL\\BaiTapLon\\BaiTapLon.csproj": {}
+    "C:\\KienBTL\\BaiTapLon\\BaiTapLon.csproj": {}
   },
   "projects": {
-    "C:\\KienBTL\\BTL\\BaiTapLon\\BaiTapLon.csproj": {
+    "C:\\KienBTL\\BaiTapLon\\BaiTapLon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\KienBTL\\BTL\\BaiTapLon\\BaiTapLon.csproj",
+        "projectUniqueName": "C:\\KienBTL\\BaiTapLon\\BaiTapLon.csproj",
         "projectName": "BaiTapLon",
-        "projectPath": "C:\\KienBTL\\BTL\\BaiTapLon\\BaiTapLon.csproj",
+        "projectPath": "C:\\KienBTL\\BaiTapLon\\BaiTapLon.csproj",
         "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-        "outputPath": "C:\\KienBTL\\BTL\\BaiTapLon\\obj\\",
+        "outputPath": "C:\\KienBTL\\BaiTapLon\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
