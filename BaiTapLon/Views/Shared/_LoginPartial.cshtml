@@ -14,8 +14,19 @@
                     <form class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout"
                         asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                         <button type="submit" class="btn  text-dark p-0 m-0 border-0">Đăng xuất</button>
+                    
                     </form>
                 </li>
+                <hr class="border-black" />
+                <a asp-action="Index" asp-area="Admin" asp-controller="Books" class="btn text-dark p-0 m-0 border-0" style="margin-left: 10px;">
+                    <li> 
+                            <div class="dropdown-item">
+                                <p>Tới Admin</p>
+                        </div>
+                    </li>
+                </a>   
+
+                
             </ul>
         </li>
     }
